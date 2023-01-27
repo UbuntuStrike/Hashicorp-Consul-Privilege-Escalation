@@ -3,7 +3,7 @@ Local or remote privilege escalation for Hashicorp Consul via Services API & ACL
 
 Shell command that can be run locally to perform privilege escalation on a vulnerable Linux target if not accessible remotely for one reason or another (Firewall Rule, Only running locally). It could also be used remotely, but there's better exploits out there such as metasploit to do that... but it can be done.
 
-How-To: 
+# How-To: 
 
 1.There is a shell.sh file included that contains a reverse bash shell that can be modified, or, replace the command all together with your own. Place or create your own shell.sh in (recomended) /tmp directory. 
 
